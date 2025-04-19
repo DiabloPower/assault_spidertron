@@ -11,9 +11,9 @@ Date: 2025-04-19
     - the recipe
       - from :
         Gun Turret = 1
-			  Flamethrower = 1
-			  Engines = 60
-			  Radar =  1
+	Flamethrower = 1
+	Engines = 60
+	Radar =  1
         Advanced Circuit = 100
       - to :
         Spidertron = 1
