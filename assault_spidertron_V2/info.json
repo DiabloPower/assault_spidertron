@@ -1,0 +1,12 @@
+{
+	"name": "assault_spidertron_V2",
+	"version": "2.0.0",
+	"title": "Assault Spidertron",
+	"author": "DiabloPower, originaly by Dave",
+	"dependencies": [ 
+		"base >= 2.0",
+		"? space-age >= 2.0",
+    	"? quality >= 2.0" ],
+	"description": "A more versatile spidertron alternative. Has slightly better health and three rocket launchers were replaced by a flamethrower, a machine gun, a small caliber cannon and a high caliber main cannon that uses artillery ammo.",
+	"factorio_version": "2.0"
+}
