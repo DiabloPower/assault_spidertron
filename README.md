@@ -16,6 +16,9 @@ This mod adapts the **Assault Spidertron** created by [Dave](https://mods.factor
 ### **Caution Regarding Explosive Weapons**
 It is highly recommended **not to use explosive weaponry** (e.g., cannon shells or rockets), particularly if the unit is left under AI control. Explosive weapons can lead to self-inflicted destruction as the unit tends to fire in close quarters, ultimately damaging itself.
 
+## Credits
+A big thank you to [Dave](https://mods.factorio.com/user/Dave-1993_) for the original mod!
+
 ---
 
 **Changelog:**  
