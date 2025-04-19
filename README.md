@@ -1,6 +1,6 @@
 # Assault Spidertron Mod
 
-![Assault Spidertron](/assault_spidertron_V2/graphics/screenshots/screenshot_AS.png)
+![Assault Spidertron](https://github.com/DiabloPower/assault_spidertron/raw/main/assault_spidertron_V2/graphics/screenshots/Screenshot_AS.png)
 
 ## Description
 
