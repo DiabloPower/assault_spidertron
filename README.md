@@ -10,8 +10,11 @@ This mod adapts the **Assault Spidertron** created by [Dave](https://mods.factor
 - **Enhanced Control**: Introduced remote driving capability to operate the Assault Spidertron from a distance.  
 - **Logistics Network Integration**: Fully compatible with Factorio's logistics network for automated supply deliveries.  
 - **Updated Recipes and Weapon Configurations**:  
-  - Overhauled crafting recipe for the Assault Spidertron.  
-  - Added new weapons and adjusted their stats for better game balance.  
+- Overhauled crafting recipe for the Assault Spidertron.  
+- Added new weapons and adjusted their stats for better game balance.  
+
+![Inventory](https://github.com/DiabloPower/assault_spidertron/raw/main/assault_spidertron_V2/graphics/screenshots/Screenshot_inventory.png)
+![Stats matter!](https://github.com/DiabloPower/assault_spidertron/raw/main/assault_spidertron_V2/graphics/screenshots/Screenshot_stats.png)
 
 ### **Caution Regarding Explosive Weapons**
 It is highly recommended **not to use explosive weaponry** (e.g., cannon shells or rockets), particularly if the unit is left under AI control. Explosive weapons can lead to self-inflicted destruction as the unit tends to fire in close quarters, ultimately damaging itself.
