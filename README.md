@@ -21,7 +21,7 @@ It is highly recommended **not to use explosive weaponry** (e.g., cannon shells 
 
 ## Credits
 - A big thank you to [Dave](https://mods.factorio.com/user/Dave-1993_) for the original mod!
-- Graphics reworked by snouz
+- Graphics reworked by [snouz](https://mods.factorio.com/user/snouz)
 
 ---
 
