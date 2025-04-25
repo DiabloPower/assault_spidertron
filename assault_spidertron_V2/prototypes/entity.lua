@@ -12,8 +12,8 @@ local function make_assaultron_leg(number, base_sprite, ending_sprite)
     localised_name = {"entity-name.assault_spidertron-leg"},
     collision_box = {{-0.01, -0.01}, {0.01, 0.01}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-    icon = "__base__/graphics/icons/spidertron.png",
-    icon_size = 64, icon_mipmaps = 4,
+    icon = path .. "/graphics/icons/assault_spidertron_icon.png",
+    icon_size = 64,
     walking_sound_volume_modifier = 0.2,
     target_position_randomisation_distance = 0.25,
     minimal_step_size = 1,
@@ -82,7 +82,7 @@ data:extend({
     collision_box = {{-1, -1}, {1, 1}},
     selection_box = {{-1, -1}, {1, 1}},
     icon = path .. "/graphics/icons/assault_spidertron_icon.png",
-    mined_sound = {filename = "__core__/sound/deconstruct-large.ogg",volume = 0.8},
+    mined_sound = { filename = "__core__/sound/deconstruct-large.ogg",volume = 0.8 },
     open_sound = { filename = "__base__/sound/spidertron/spidertron-door-open.ogg", volume= 0.35 },
     close_sound = { filename = "__base__/sound/spidertron/spidertron-door-close.ogg", volume = 0.4 },
     sound_minimum_speed = 0.1,
@@ -93,7 +93,7 @@ data:extend({
       {
         filename = "__base__/sound/spidertron/spidertron-vox.ogg",
         volume = 0.15,
-	    speed = 0.6
+      speed = 0.6
       },
       activate_sound =
       {
@@ -117,32 +117,32 @@ data:extend({
     max_health = 4000,  
     resistances =
     {
-	  {
+      {
         type = "acid",
         decrease = 15,
         percent = 70
       },
-	  {
+      {
         type = "electric",
         decrease = 15,
         percent = 70
       },
-	  {
+      {
         type = "explosion",
         decrease = 20,
         percent = 80
       },
-	  {
+      {
         type = "fire",
         decrease = 15,
         percent = 90
       },
-	  {
+      {
         type = "impact",
         decrease = 100,
         percent = 80
       },
-	  {
+      {
         type = "laser",
         decrease = 15,
         percent = 70
@@ -160,12 +160,12 @@ data:extend({
       size = {128, 128},
       scale = 0.5
     },
-    corpse = "spidertron-remnants",
+    corpse = "assault_spidertron-remnants",
     dying_explosion = "spidertron-explosion",
     energy_per_hit_point = 1,
     guns = { "assault_spidertron-mortar", "assault_spidertron_rocket_launcher", "assault_spidertron_cannon", "assault_spidertron-mg", "assault_spidertron-flamer" },
     inventory_size = 80,
-	  trash_inventory_size = 20,
+    trash_inventory_size = 20,
     logistic_slot_count = 10,
     equipment_grid = "assault_spidertron-equipment-grid",
     height = 1.25,
@@ -236,6 +236,8 @@ data:extend({
       remote_type = "spidertron-remote",
     }
   },
+
+
   make_assaultron_leg(1),
   make_assaultron_leg(2),
   make_assaultron_leg(3),
@@ -249,7 +251,7 @@ data:extend({
       -- {
         -- width = 66,
         -- height = 70,
-		-- frame_count = 1,
+    -- frame_count = 1,
         -- line_length = 8,
         -- direction_count = 64,
         -- shift = util.by_pixel(0, -19),
@@ -267,7 +269,7 @@ data:extend({
           -- width = 132,
           -- height = 138,
           -- frame_count = 1,
-		  -- line_length = 8,
+      -- line_length = 8,
           -- direction_count = 64,
           -- scale = 0.5,
           -- shift = util.by_pixel(0, -19),
@@ -287,4 +289,37 @@ data:extend({
   -- },
   -- turret_rotation_speed = 0.5 / 60,
   -- turret_return_timeout = 300
+
+  {
+    type = "corpse",
+    name = "assault_spidertron-remnants",
+    icon = path .. "/graphics/icons/assault_spidertron_icon.png",
+    flags = {"placeable-neutral", "not-on-map"},
+    hidden_in_factoriopedia = true,
+    subgroup = "transport-remnants",
+    order = "a-l-a",
+    selection_box = {{-3, -3}, {3, 3}},
+    collision_box = {{-2, -2}, {2, 2}},
+    tile_width = 3,
+    tile_height = 3,
+    selectable_in_game = false,
+    time_before_removed = 60 * 60 * 15, -- 15 minutes
+    final_render_layer = "remnants",
+    remove_on_tile_placement = true,
+    animation = make_rotated_animation_variations_from_sheet (1,
+    {
+      layers =
+      {
+        {
+          filename = path .. "/graphics/entity/assault_spidertron/remnants/assault_spidertron-remnants.png",
+          line_length = 1,
+          width = 448,
+          height = 448,
+          direction_count = 1,
+          shift = util.by_pixel(0, 0),
+          scale = 0.5
+        },      }
+    })
+  },
+
 })
