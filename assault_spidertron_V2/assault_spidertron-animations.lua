@@ -8,14 +8,6 @@ local function create_leg_sprite_layer_definition(column, row, additions, sprite
   tab.draw_as_shadow = additions.draw_as_shadow
   tab.apply_runtime_tint = additions.apply_runtime_tint
   tab.variation_count = nil
-  if tab.hr_version then
-    tab.hr_version.x = (tab.hr_version.variation_count >= 8) and (tab.hr_version.width * (column - 1)) or tab.hr_version.x
-    tab.hr_version.y = tab.hr_version.height * (row - 1)
-    tab.hr_version.x = tab.hr_version.width * (column - 1)
-    tab.hr_version.draw_as_shadow = additions.draw_as_shadow
-    tab.hr_version.apply_runtime_tint = additions.apply_runtime_tint
-    tab.hr_version.variation_count = nil
-  end
   return tab
 end
 
@@ -154,62 +146,34 @@ local leg_lower_part_graphics_definitions =
   top_end =
   {
     filename = path .. "/graphics/entity/assault_spidertron/legs/assault_spidertron-legs-lower-end-A.png",
-    width = 20,
-    height = 50,
+    width = 40,
+    height = 98,
     variation_count = 8,
-    shift = util.by_pixel(0, 20),
-    direction_count = 2,
-    hr_version =
-    {
-      filename = path .. "/graphics/entity/assault_spidertron/legs/hr-assault_spidertron-legs-lower-end-A.png",
-      width = 40,
-      height = 98,
-      variation_count = 8,
-      scale = 0.5,
-      shift = util.by_pixel(0.5, 19.5),
-      direction_count = 2
-    }
+    scale = 0.5,
+    shift = util.by_pixel(0.5, 19.5),
+    direction_count = 2
   },
 
   middle =
   {
     filename = path .. "/graphics/entity/assault_spidertron/legs/assault_spidertron-legs-lower-stretchable.png",
-    width = 26,
-    height = 192,
+    width = 50,
+    height = 384,
     variation_count = 8,
-    scale = 0.5,
-    shift = util.by_pixel(1, 0),
-    direction_count = 2,
-    hr_version =
-    {
-      filename = path .. "/graphics/entity/assault_spidertron/legs/hr-assault_spidertron-legs-lower-stretchable.png",
-      width = 50,
-      height = 384,
-      variation_count = 8,
-      scale = 0.25,
-      shift = util.by_pixel(0.5, 0),
-      direction_count = 2
-    }
+    scale = 0.25,
+    shift = util.by_pixel(0.5, 0),
+    direction_count = 2
   },
 
   bottom_end =
   {
     filename = path .. "/graphics/entity/assault_spidertron/legs/assault_spidertron-legs-lower-end-B.png",
-    width = 18,
-    height = 46,
+    width = 34,
+    height = 92,
     variation_count = 8,
+    scale = 0.5,
     shift = util.by_pixel(0, -21),
-    direction_count = 2,
-    hr_version =
-    {
-      filename = path .. "/graphics/entity/assault_spidertron/legs/hr-assault_spidertron-legs-lower-end-B.png",
-      width = 34,
-      height = 92,
-      variation_count = 8,
-      scale = 0.5,
-      shift = util.by_pixel(0, -21),
-      direction_count = 2
-    }
+    direction_count = 2
   },
 
   reflection_top_end =
@@ -253,62 +217,34 @@ local leg_upper_part_graphics_definitions =
   top_end =
   {
     filename = path .. "/graphics/entity/assault_spidertron/legs/assault_spidertron-legs-upper-end-A.png",
-    width = 22,
-    height = 44,
+    width = 42,
+    height = 86,
     variation_count = 8,
+    scale = 0.5,
     shift = util.by_pixel(0, 18),
-    direction_count = 2,
-    hr_version =
-    {
-      filename = path .. "/graphics/entity/assault_spidertron/legs/hr-assault_spidertron-legs-upper-end-A.png",
-      width = 42,
-      height = 86,
-      variation_count = 8,
-      scale = 0.5,
-      shift = util.by_pixel(0, 18),
-      direction_count = 2
-    }
+    direction_count = 2
   },
 
   middle =
   {
     filename = path .. "/graphics/entity/assault_spidertron/legs/assault_spidertron-legs-upper-stretchable.png",
-    width = 30,
-    height = 128,
+    width = 60,
+    height = 256,
     variation_count = 8,
-    scale = 0.5,
-    shift = util.by_pixel(-2, 0),
-    direction_count = 2,
-    hr_version =
-    {
-      filename = path .. "/graphics/entity/assault_spidertron/legs/hr-assault_spidertron-legs-upper-stretchable.png",
-      width = 60,
-      height = 256,
-      variation_count = 8,
-      scale = 0.25,
-      shift = util.by_pixel(-1.5, 0),
-      direction_count = 2
-    }
+    scale = 0.25,
+    shift = util.by_pixel(-1.5, 0),
+    direction_count = 2
   },
 
   bottom_end =
   {
     filename = path .. "/graphics/entity/assault_spidertron/legs/assault_spidertron-legs-upper-end-B.png",
-    width = 20,
-    height = 30,
+    width = 38,
+    height = 58,
     variation_count = 8,
-    shift = util.by_pixel(1, -9),
-    direction_count = 2,
-    hr_version =
-    {
-      filename = path .. "/graphics/entity/assault_spidertron/legs/hr-assault_spidertron-legs-upper-end-B.png",
-      width = 38,
-      height = 58,
-      variation_count = 8,
-      scale = 0.5,
-      shift = util.by_pixel(0.5, -9),
-      direction_count = 2
-    }
+    scale = 0.5,
+    shift = util.by_pixel(0.5, -9),
+    direction_count = 2
   },
 
   reflection_top_end =
@@ -348,21 +284,12 @@ local leg_upper_part_graphics_definitions =
 local leg_joint_graphics_definitions =
 {
   filename = path .. "/graphics/entity/assault_spidertron/legs/assault_spidertron-legs-knee.png",
-  width = 12,
-  height = 14,
+  width = 22,
+  height = 28,
   variation_count = 8,
-  shift = util.by_pixel(1, 0),
-  direction_count = 2,
-  hr_version =
-  {
-    filename = path .. "/graphics/entity/assault_spidertron/legs/hr-assault_spidertron-legs-knee.png",
-    width = 22,
-    height = 28,
-    variation_count = 8,
-    scale = 0.5,
-    shift = util.by_pixel(0.5, 0),
-    direction_count = 2
-  }
+  scale = 0.5,
+  shift = util.by_pixel(0.5, 0),
+  direction_count = 2
 }
 
 local spidertron_torso_graphics_set =
@@ -373,21 +300,12 @@ local spidertron_torso_graphics_set =
     {
       {
         filename = path .. "/graphics/entity/assault_spidertron/torso/assault_spidertron-body-bottom.png",
-        width = 64,
-        height = 54,
+        width = 126,
+        height = 106,
         line_length = 1,
         direction_count = 1,
-        shift = util.by_pixel(0, 0),
-        hr_version =
-        {
-          filename = path .. "/graphics/entity/assault_spidertron/torso/hr-assault_spidertron-body-bottom.png",
-          width = 126,
-          height = 106,
-          line_length = 1,
-          direction_count = 1,
-          scale = 0.5,
-          shift = util.by_pixel(0, 0)
-        }
+        scale = 0.5,
+        shift = util.by_pixel(0, 0)
       }
     }
   },
@@ -395,23 +313,13 @@ local spidertron_torso_graphics_set =
   shadow_base_animation =
   {
     filename = path .. "/graphics/entity/assault_spidertron/torso/assault_spidertron-body-bottom-shadow.png",
-    width = 72,
-    height = 48,
+    width = 144,
+    height = 96,
     line_length = 1,
     direction_count = 1,
+    scale = 0.5,
     draw_as_shadow = true,
-    shift = util.by_pixel(-1, -1),
-    hr_version =
-    {
-      filename = path .. "/graphics/entity/assault_spidertron/torso/hr-assault_spidertron-body-bottom-shadow.png",
-      width = 144,
-      height = 96,
-      line_length = 1,
-      direction_count = 1,
-      scale = 0.5,
-      draw_as_shadow = true,
-      shift = util.by_pixel(-1, -1)
-    }
+    shift = util.by_pixel(-1, -1)
   },
 
   animation =
@@ -420,41 +328,22 @@ local spidertron_torso_graphics_set =
     {
       {
         filename = path .. "/graphics/entity/assault_spidertron/torso/assault_spidertron-body.png",
-        width = 66,
-        height = 70,
+        width = 132,
+        height = 138,
         line_length = 8,
         direction_count = 64,
-        shift = util.by_pixel(0, -19),
-        hr_version =
-        {
-          filename = path .. "/graphics/entity/assault_spidertron/torso/hr-assault_spidertron-body.png",
-          width = 132,
-          height = 138,
-          line_length = 8,
-          direction_count = 64,
-          scale = 0.5,
-          shift = util.by_pixel(0, -19)
-        }
+        scale = 0.5,
+        shift = util.by_pixel(0, -19)
       },
       {
         filename = path .. "/graphics/entity/assault_spidertron/torso/assault_spidertron-body-mask.png",
-        width = 66,
-        height = 70,
+        width = 132,
+        height = 138,
         line_length = 8,
         direction_count = 64,
+        scale = 0.5,
         apply_runtime_tint = true,
-        shift = util.by_pixel(0, -19),
-        hr_version =
-        {
-          filename = path .. "/graphics/entity/assault_spidertron/torso/hr-assault_spidertron-body-mask.png",
-          width = 132,
-          height = 138,
-          line_length = 8,
-          direction_count = 64,
-          scale = 0.5,
-          apply_runtime_tint = true,
-          shift = util.by_pixel(0, -19)
-        }
+        shift = util.by_pixel(0, -19)
       }
     }
   },
@@ -462,23 +351,13 @@ local spidertron_torso_graphics_set =
   shadow_animation =
   {
     filename = path .. "/graphics/entity/assault_spidertron/torso/assault_spidertron-body-shadow.png",
-    width = 96,
-    height = 48,
+    width = 192,
+    height = 94,
     line_length = 8,
     direction_count = 64,
+    scale = 0.5,
     draw_as_shadow = true,
-    shift = util.by_pixel(26, 1),
-    hr_version =
-    {
-      filename = path .. "/graphics/entity/assault_spidertron/torso/hr-assault_spidertron-body-shadow.png",
-      width = 192,
-      height = 94,
-      line_length = 8,
-      direction_count = 64,
-      scale = 0.5,
-      draw_as_shadow = true,
-      shift = util.by_pixel(26, 0.5)
-    }
+    shift = util.by_pixel(26, 0.5)
   },
 
   water_reflection =
@@ -486,10 +365,10 @@ local spidertron_torso_graphics_set =
     pictures =
     {
       filename = path .. "/graphics/entity/assault_spidertron/torso/assault_spidertron-body-water-reflection.png",
-      width = 448,
-      height = 448,
+      width = 45,
+      height = 45,
       variation_count = 1,
-      scale = 0.5,
+      scale = 5,
       shift = util.by_pixel(0, 0)
     }
   },

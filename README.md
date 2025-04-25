@@ -1,6 +1,6 @@
 # Assault Spidertron Mod
 
-![Assault Spidertron](https://github.com/DiabloPower/assault_spidertron/raw/main/assault_spidertron_V2/graphics/screenshots/Screenshot_AS.png)
+![Assault Spidertron](https://github.com/DiabloPower/assault_spidertron/raw/main/screenshots/Screenshot_AS.png)
 
 ## Description
 
@@ -13,14 +13,15 @@ This mod adapts the **Assault Spidertron** created by [Dave](https://mods.factor
 - Overhauled crafting recipe for the Assault Spidertron.  
 - Added new weapons and adjusted their stats for better game balance.  
 
-![Inventory](https://github.com/DiabloPower/assault_spidertron/raw/main/assault_spidertron_V2/graphics/screenshots/Screenshot_inventory.png)
-![Stats matter!](https://github.com/DiabloPower/assault_spidertron/raw/main/assault_spidertron_V2/graphics/screenshots/Screenshot_stats.png)
+![Inventory](https://github.com/DiabloPower/assault_spidertron/raw/main/screenshots/Screenshot_inventory.png)
+![Stats matter!](https://github.com/DiabloPower/assault_spidertron/raw/main/screenshots/Screenshot_stats.png)
 
 ### **Caution Regarding Explosive Weapons**
 It is highly recommended **not to use explosive weaponry** (e.g., cannon shells or rockets), particularly if the unit is left under AI control. Explosive weapons can lead to self-inflicted destruction as the unit tends to fire in close quarters, ultimately damaging itself.
 
 ## Credits
-A big thank you to [Dave](https://mods.factorio.com/user/Dave-1993_) for the original mod!
+- A big thank you to [Dave](https://mods.factorio.com/user/Dave-1993_) for the original mod!
+- Graphics reworked by snouz
 
 ---
 

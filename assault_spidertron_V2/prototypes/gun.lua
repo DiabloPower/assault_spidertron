@@ -14,7 +14,7 @@ data:extend({
       cooldown = 1,
       range = 12,
       min_range = 3,
-	  gun_barrel_length = 1.05,
+      gun_barrel_length = 1.05,
       gun_center_shift = { 0, -0.65 },
       cyclic_sound =
       {
@@ -42,8 +42,8 @@ data:extend({
       }
     },
     stack_size = 1
-},
-{
+  },
+  {
     type = "gun",
     name = "assault_spidertron-mortar",
     icon = "__base__/graphics/icons/artillery-shell.png",
@@ -56,7 +56,7 @@ data:extend({
       ammo_category = "artillery-shell",
       cooldown = 250,
       movement_slow_down_factor = 0.6,
-	  shell_particle =
+      shell_particle =
       {
         name = "shell-particle",
         direction_deviation = 0.1,
@@ -68,14 +68,14 @@ data:extend({
         starting_frame_speed_deviation = 0.1
       },
       projectile_creation_distance = 1.0,
-	  projectile_center = {0, 0.5},
+      projectile_center = {0, 0.5},
       range = 80,
-	  min_range = 20,
+      min_range = 20,
       sound = sounds.tank_gunshot
     },
     stack_size = 1
-},
-{
+  },
+  {
     type = "gun",
     name = "assault_spidertron-mg",
     icon = "__base__/graphics/icons/submachine-gun.png",
@@ -100,7 +100,7 @@ data:extend({
         starting_frame_speed_deviation = 0.1
       },
       projectile_creation_distance = 1.0,
-	  projectile_center = {0, 1.7},
+      projectile_center = {0, 1.7},
       range = 25,
       damage_modifier = 2,
       sound = sounds.gun_turret_gunshot
