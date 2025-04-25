@@ -13,7 +13,7 @@ Date: 2025-04-25
     - New thumbnail (snouz)
     - New icon (snouz)
     - Optimized mod size (snouz)
-  Locale
+  Locale:
     - Added French locale (snouz)
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.1
