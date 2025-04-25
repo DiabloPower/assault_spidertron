@@ -13,7 +13,7 @@ data:extend({
         {type = "item", name = "advanced-circuit", amount = 50}
     },
     results = {{type="item", name="assault_spidertron", amount=1}},
-    icon = path .. "/graphics/icons/assault_spidertron.png",
-    icon_size = 64, icon_mipmaps = 4
+    icon = path .. "/graphics/icons/assault_spidertron_icon.png",
+    icon_size = 64,
 }
 })

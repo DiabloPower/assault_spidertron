@@ -1,8 +1,8 @@
 {
 	"name": "assault_spidertron_V2",
-	"version": "2.0.1",
+	"version": "2.1.0",
 	"title": "Assault Spidertron",
-	"author": "DiabloPower, originaly by Dave",
+	"author": "DiabloPower, originally by Dave",
 	"dependencies": [ 
 		"base >= 2.0",
 		"? space-age >= 2.0",
