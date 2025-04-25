@@ -276,7 +276,7 @@ data:extend({
           -- stripes =
           -- {
             -- {
-             -- filename = path .. "/graphics/entity/assault_spidertron/torso/hr-assault_spidertron-body.png",
+             -- filename = path .. "/graphics/entity/assault_spidertron/torso/assault_spidertron-body.png",
              -- width_in_frames = 8,
              -- height_in_frames = 8,
             -- }
