@@ -1,55 +1,57 @@
-Assault Spidertron
+---------------------------------------------------------------------------------------------------
+Version: 2.0.1
+Date: 2025-04-25
+  Fixed:
+    - the Changelog (i know, sounds kind of odd)
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.0
 Date: 2025-04-19
-  - ported to Factorio 2.0 (including SpaceAge)
+  Done:
+    - Ported to Factorio 2.0 (including SpaceAge).
   Added:
-    - remote drive capability
-    - logistics capability
-    - german translation
+    - Remote drive capability.
+    - Logistics capability.
+    - German translation.
   Changes:
-    - the recipe
-      - from :
-        Gun Turret = 1
-	Flamethrower = 1
-	Engines = 60
-	Radar =  1
-        Advanced Circuit = 100
-      - to :
-        Spidertron = 1
-        Steel = 200
-        Advanced Circuit = 50
-    - weapon loadout (Name, Max. Range, Min. Range, Damage Modifier, Projectiles per Second)
+    - The recipe:
+        from:
+          - Gun Turret = 1
+          - Flamethrower = 1
+          - Engines = 60
+          - Radar = 1
+          - Advanced Circuit = 100
+        to:
+          - Spidertron = 1
+          - Steel = 200
+          - Advanced Circuit = 50
+    - Weapon loadout (Name, Max. Range, Min. Range, Damage Modifier, Projectiles per Second):
         - Assault Spidertron Mortar, 80, 20, 0, 0.24
         - Assault Spidertron Rocket Launcher, 60, 5, 1.5, 1
         - Assault Spidertron Cannon, 40, 0, 1.5, 0.3
         - Assault Spidertron MG, 25, 0, 2, 2
-        - Assault Spidertron Flamethrower, 12, 3, 0, NaN
-    - MG stats
-      - range = 35 > 25
-      - cooldown = 8 > 15
-      - damage-modifier = 0 > 2
-    - damage resistances (type = negated, resistance)
-      - physical = 15dmg, 60 > 70%
-      - explosion = 20dmg, 75 > 80%
-      - laser = 0 > 15dmg, 70%
-      - acid = 0 > 15dmg, 70%
-      - electric = 0 > 15dmg, 70%
-      - fire = 15dmg, 60 > 90%
-      - impact = 100dmg, 80%
-    - slots
-      - inventory = 60 > 80
-      - trash = 10 > 20
-      - logistic = 0 > 10
-    - torso rotation speed
-      - 0.002 > 0.02
-    - energy source
-      - burner > void
+        - Assault Spidertron Flamethrower, 12, 3, 0, Not applicable
+    - MG stats:
+        - Range: 35 to 25
+        - Cooldown: 8 to 15
+        - Damage modifier: 0 to 2
+    - Damage resistances (type = negated, resistance):
+        - Physical: 15 damage, 60% to 70%
+        - Explosion: 20 damage, 75% to 80%
+        - Laser: 0 to 15 damage, 70%
+        - Acid: 0 to 15 damage, 70%
+        - Electric: 0 to 15 damage, 70%
+        - Fire: 15 damage, 60% to 90%
+        - Impact: 100 damage, 80%
+    - Slots:
+        - Inventory: 60 to 80
+        - Trash: 10 to 20
+        - Logistic: 0 to 10
+    - Torso rotation speed: 0.002 to 0.02
+    - Energy source: Burner to Void
   Removed:
-    - fuel usage
+    - Fuel usage.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
 Date: 2023-04-20
   Added:
-    - Mod creation
----------------------------------------------------------------------------------------------------
+    - Mod creation.
