@@ -26,4 +26,5 @@ It is highly recommended **not to use explosive weaponry** (e.g., cannon shells 
 ---
 
 **Changelog:**  
+Now with Mod Settings!
 A comprehensive list of changes can be found in the mod's **Changelog** file.
