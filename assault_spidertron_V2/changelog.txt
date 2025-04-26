@@ -1,4 +1,28 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.2.0
+Date: 2025-04-26
+  Added:
+    - Mod Settings
+      - Assault Spidertron Tech Option (default=after Spidertron tech, Early Assault Spidertron=after Tank tech)
+      - Engine Type (default=Void, alternate=Burner Engine)
+      - Enable/Disable the Assault Mortar Artillery Cannon (default=Enabled)
+      - Enable/Disable the Assault Rocket Launcher (default=Enabled)
+      - Enable/Disable the Assault Cannon (default=Enabled)
+      - Enable/Disable the Assault Machine Gun (default=Enabled)
+      - Enable/Disable the Assault Flamer (default=Enabled)
+    - alternate tech cost for Early Assault Spidertron Option
+      - default = spidertron = 1, steel-plate = 200, advanced-circuit = 50
+      - early tech = tank = 1, steel-plate = 200, advanced-circuit = 100, engine-unit = 60, radar = 1
+    - alternate recipe cost for Early Assault Spidertron Option
+      - default = same as Spidertron
+      - early tech = 1000 Red, Green, Blue, Grey science packs by 60 seconds
+    - alternate health for Early Assault Spidertron Option
+      - default = 4000 HP
+      - early tech = 2000 HP
+    - English translation
+    - French translation
+    - German translation
+---------------------------------------------------------------------------------------------------
 Version: 2.1.1
 Date: 2025-04-25
   Changes:
