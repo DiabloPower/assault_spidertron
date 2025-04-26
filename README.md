@@ -15,6 +15,9 @@ This mod adapts the **Assault Spidertron** created by [Dave](https://mods.factor
 
 ![Inventory](https://github.com/DiabloPower/assault_spidertron/raw/main/screenshots/Screenshot_inventory.png)
 ![Stats matter!](https://github.com/DiabloPower/assault_spidertron/raw/main/screenshots/Screenshot_stats.png)
+![Stats matter!](https://github.com/DiabloPower/assault_spidertron/raw/main/screenshots/Screenshot_stats_02.png)
+![Mod Settings default](https://github.com/DiabloPower/assault_spidertron/raw/main/screenshots/Screenshot_settings_01.png)
+![Mod Settings alternate](https://github.com/DiabloPower/assault_spidertron/raw/main/screenshots/Screenshot_settings_01.png)
 
 ### **Caution Regarding Explosive Weapons**
 It is highly recommended **not to use explosive weaponry** (e.g., cannon shells or rockets), particularly if the unit is left under AI control. Explosive weapons can lead to self-inflicted destruction as the unit tends to fire in close quarters, ultimately damaging itself.
