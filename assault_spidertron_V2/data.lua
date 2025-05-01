@@ -34,46 +34,86 @@ if data.raw.technology["spidertron"] then
   data.raw.recipe["assault_spidertron"].enabled = false
 end
 
-local burner_enabled = settings.startup["enable-burner-engine"].value
+local use_enhancements_settings = settings.startup["assault-spidertron-use-enhancements-settings"].value
 
-if burner_enabled == "burner" then
-    data.raw["spider-vehicle"]["assault_spidertron"].energy_source = {
-        type = "burner",
-        fuel_categories = {"chemical"},
-        effectivity = 1,
-        fuel_inventory_size = 2,
-        burnt_inventory_size = 0,
-        emissions_per_minute = {
-          pollution = 10
-        },
-        smoke =
-        {
-          {
-            name = "tank-smoke",
-            deviation = {0.5, 0.5},
-            frequency = 100,
-            position = {0, 0},
-            starting_frame = 0,
-            starting_frame_deviation = 60
-          },
-          {
-            name = "tank-smoke",
-            deviation = {0.5, 0.5},
-            frequency = 150,
-            position = {0, 0},
-            starting_frame = 0,
-            starting_frame_deviation = 60
-          }
-        }     
-    }
-    data.raw["spider-vehicle"]["assault_spidertron"].movement_energy_consumption = "250kW"
+if mods["SpidertronEnhancements"] and use_enhancements_settings == "enhancements" then
+    local spidertron_requires_fuel = settings.startup["spidertron-enhancements-spiderton-requires-fuel"] and settings.startup["spidertron-enhancements-spiderton-requires-fuel"].value
+
+    if spidertron_requires_fuel == "Yes" then
+        data.raw["spider-vehicle"]["assault_spidertron"].energy_source = {
+            type = "burner",
+            fuel_categories = {"chemical"},
+            effectivity = 1,
+            fuel_inventory_size = 3, -- Spidertron Enhancements Mod Value
+            emissions_per_minute = {
+                pollution = 10
+            },
+            smoke = {
+                {
+                    name = "tank-smoke",
+                    deviation = {0.5, 0.5},
+                    frequency = 100,
+                    position = {0, 0},
+                    starting_frame = 0,
+                    starting_frame_deviation = 60
+                },
+                {
+                    name = "tank-smoke",
+                    deviation = {0.5, 0.5},
+                    frequency = 150,
+                    position = {0, 0},
+                    starting_frame = 0,
+                    starting_frame_deviation = 60
+                }
+            }
+        }
+        data.raw["spider-vehicle"]["assault_spidertron"].movement_energy_consumption = "800kW" -- Spidertron Enhancements Mod Value
+    elseif spidertron_requires_fuel == "No" then
+        data.raw["spider-vehicle"]["assault_spidertron"].energy_source = {
+            type = "void"
+        }
+        data.raw["spider-vehicle"]["assault_spidertron"].movement_energy_consumption = "25kW"
+    end
 else
-    data.raw["spider-vehicle"]["assault_spidertron"].energy_source = {
-        type = "void"
-    }
-    data.raw["spider-vehicle"]["assault_spidertron"].movement_energy_consumption = "25kW"
-end
+    -- my Logic
+    local burner_enabled = settings.startup["enable-burner-engine"].value
 
+    if burner_enabled == "burner" then
+        data.raw["spider-vehicle"]["assault_spidertron"].energy_source = {
+            type = "burner",
+            fuel_categories = {"chemical"},
+            effectivity = 1,
+            fuel_inventory_size = 2,
+            emissions_per_minute = {
+                pollution = 10
+            },
+            smoke = {
+                {
+                    name = "tank-smoke",
+                    deviation = {0.5, 0.5},
+                    frequency = 100,
+                    position = {0, 0},
+                    starting_frame = 0,
+                    starting_frame_deviation = 60
+                },
+                {
+                    name = "tank-smoke",
+                    deviation = {0.5, 0.5},
+                    frequency = 150,
+                    position = {0, 0},
+                    starting_frame = 0,
+                    starting_frame_deviation = 60
+                }
+            }
+        }
+        data.raw["spider-vehicle"]["assault_spidertron"].movement_energy_consumption = "250kW"
+    else
+        data.raw["spider-vehicle"]["assault_spidertron"].energy_source = {
+            type = "void"
+        }
+        data.raw["spider-vehicle"]["assault_spidertron"].movement_energy_consumption = "25kW"
+    end
+end
 
 local function generate_gun_list()
   local guns = {}
