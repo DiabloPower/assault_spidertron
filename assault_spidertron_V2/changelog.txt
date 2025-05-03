@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.2.2
+Date: 2025-05-03
+  Changes:
+    - french language fix
+---------------------------------------------------------------------------------------------------
+Version: 2.2.1
+Date: 2025-05-01
+  Added:
+    - Mod Setting for Spidertron Enhancements Mod Fuel Usage, is ignored if Spidertron Enhancements is not installed/activated
+      - default Value is Assault Spidertron settings for Engine type and Fuel usage (250kw)
+      - Enhanced Value is Spidertron Enhancements Mod settings for Engine type and Fuel usage (800kw)
+    - English, French and German translations for the new Mod Setting
+  Changes:
+    - reordered Mod Settings
+---------------------------------------------------------------------------------------------------
 Version: 2.2.0
 Date: 2025-04-26
   Added:
