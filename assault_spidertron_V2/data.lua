@@ -36,38 +36,41 @@ end
 
 local use_enhancements_settings = settings.startup["assault-spidertron-use-enhancements-settings"].value
 
+local smoke_table = nil
+if settings.startup["enable-burner-engine-smoke"] and settings.startup["enable-burner-engine-smoke"].value == "yes" then
+    smoke_table = {
+        {
+            name = "tank-smoke",
+            deviation = {0.5, 0.5},
+            frequency = 100,
+            position = {0, 0},
+            starting_frame = 0,
+            starting_frame_deviation = 60
+        },
+        {
+            name = "tank-smoke",
+            deviation = {0.5, 0.5},
+            frequency = 150,
+            position = {0, 0},
+            starting_frame = 0,
+            starting_frame_deviation = 60
+        }
+    }
+end
+
 if mods["SpidertronEnhancements"] and use_enhancements_settings == "enhancements" then
     local spidertron_requires_fuel = settings.startup["spidertron-enhancements-spiderton-requires-fuel"] and settings.startup["spidertron-enhancements-spiderton-requires-fuel"].value
-
+  
     if spidertron_requires_fuel == "Yes" then
         data.raw["spider-vehicle"]["assault_spidertron"].energy_source = {
             type = "burner",
             fuel_categories = {"chemical"},
             effectivity = 1,
-            fuel_inventory_size = 3, -- Spidertron Enhancements Mod Value
             emissions_per_minute = {
                 pollution = 10
             },
-            smoke = {
-                {
-                    name = "tank-smoke",
-                    deviation = {0.5, 0.5},
-                    frequency = 100,
-                    position = {0, 0},
-                    starting_frame = 0,
-                    starting_frame_deviation = 60
-                },
-                {
-                    name = "tank-smoke",
-                    deviation = {0.5, 0.5},
-                    frequency = 150,
-                    position = {0, 0},
-                    starting_frame = 0,
-                    starting_frame_deviation = 60
-                }
-            }
+            smoke = smoke_table,
         }
-        data.raw["spider-vehicle"]["assault_spidertron"].movement_energy_consumption = "800kW" -- Spidertron Enhancements Mod Value
     elseif spidertron_requires_fuel == "No" then
         data.raw["spider-vehicle"]["assault_spidertron"].energy_source = {
             type = "void"
@@ -87,24 +90,7 @@ else
             emissions_per_minute = {
                 pollution = 10
             },
-            smoke = {
-                {
-                    name = "tank-smoke",
-                    deviation = {0.5, 0.5},
-                    frequency = 100,
-                    position = {0, 0},
-                    starting_frame = 0,
-                    starting_frame_deviation = 60
-                },
-                {
-                    name = "tank-smoke",
-                    deviation = {0.5, 0.5},
-                    frequency = 150,
-                    position = {0, 0},
-                    starting_frame = 0,
-                    starting_frame_deviation = 60
-                }
-            }
+            smoke = smoke_table,
         }
         data.raw["spider-vehicle"]["assault_spidertron"].movement_energy_consumption = "250kW"
     else

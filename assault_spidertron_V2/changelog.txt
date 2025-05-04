@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.2.3
+Date: 2025-05-04
+  Added:
+    - Mod Setting -> Burner Engines smoke
+      - yes: if a Burner Engine is selected it produces smoke
+      - no: well... it does not smoke...
+    - English, French and German translations for the new Mod Setting
+  Changed:
+    - When activated, SpidertronEnhancements' fuel consumption and fuel slot values are applied
+---------------------------------------------------------------------------------------------------
 Version: 2.2.2
 Date: 2025-05-03
   Changes:

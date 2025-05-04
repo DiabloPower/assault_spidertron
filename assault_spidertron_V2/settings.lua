@@ -17,11 +17,19 @@ data:extend({
     },
     {
         type = "string-setting",
+        name = "enable-burner-engine-smoke",
+        setting_type = "startup",
+        allowed_values = {"yes", "no"},
+        default_value = "yes",
+        order = "a-c"
+    },
+    {
+        type = "string-setting",
         name = "spidertron-tech-option",
         setting_type = "startup",
         allowed_values = {"default", "early-assault-spidertron"},
         default_value = "default",
-        order = "a-c"
+        order = "a-d"
     },
     {
         type = "bool-setting",
