@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.3.0
+Date: 2025-05-07
+  Added:
+    - some Mod Settings
+      - friendly fire (default: on, alternate: off) (ignored if Tarantulator Mod is installed)
+      - automatic weapon cycling (default: off, alternate: on)
+      - Assault Mortar Artillery Cannon amount (default=1, alternate: up to 4)
+      - Assault Rocket Launcher (default=1, alternate: up to 4)
+      - Assault Cannon (default=1, alternate: up to 4)
+      - Assault Machine Gun (default=1, alternate: up to 4)
+      - Assault Flamer (default=1, alternate: up to 4)
+---------------------------------------------------------------------------------------------------
 Version: 2.2.3
 Date: 2025-05-04
   Added:

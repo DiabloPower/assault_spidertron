@@ -12,7 +12,7 @@ if data.raw.technology["spidertron"] then
   tech.effects = {{type = "unlock-recipe", recipe = "assault_spidertron"}}
   tech.prerequisites = {"spidertron"}
 
-  local tech_option = settings.startup["spidertron-tech-option"].value
+  local tech_option = settings.startup["assault-spidertron-tech-option"].value
   if tech_option == "early-assault-spidertron" then
       tech.prerequisites = {"tank"}
       tech.unit = {
@@ -37,7 +37,7 @@ end
 local use_enhancements_settings = settings.startup["assault-spidertron-use-enhancements-settings"].value
 
 local smoke_table = nil
-if settings.startup["enable-burner-engine-smoke"] and settings.startup["enable-burner-engine-smoke"].value == "yes" then
+if settings.startup["assault-spidertron-enable-burner-engine-smoke"] and settings.startup["assault-spidertron-enable-burner-engine-smoke"].value == "yes" then
     smoke_table = {
         {
             name = "tank-smoke",
@@ -79,7 +79,7 @@ if mods["SpidertronEnhancements"] and use_enhancements_settings == "enhancements
     end
 else
     -- my Logic
-    local burner_enabled = settings.startup["enable-burner-engine"].value
+    local burner_enabled = settings.startup["assault-spidertron-enable-burner-engine"].value
 
     if burner_enabled == "burner" then
         data.raw["spider-vehicle"]["assault_spidertron"].energy_source = {
@@ -101,24 +101,29 @@ else
     end
 end
 
+if settings.startup["assault-spidertron-cycle-weapons"].value == "yes" then
+    data.raw["spider-vehicle"]["assault_spidertron"].automatic_weapon_cycling = true
+end
+
 local function generate_gun_list()
-  local guns = {}
-  if settings.startup["enable-gun-mortar"].value then
-      table.insert(guns, "assault_spidertron-mortar")
-  end
-  if settings.startup["enable-gun-rocket-launcher"].value then
-      table.insert(guns, "assault_spidertron_rocket_launcher")
-  end
-  if settings.startup["enable-gun-cannon"].value then
-      table.insert(guns, "assault_spidertron_cannon")
-  end
-  if settings.startup["enable-gun-mg"].value then
-      table.insert(guns, "assault_spidertron-mg")
-  end
-  if settings.startup["enable-gun-flamer"].value then
-      table.insert(guns, "assault_spidertron-flamer")
-  end
-  return guns
+    local guns = {}
+
+    local function add_guns(setting_enable, setting_amount, gun_name)
+        if settings.startup[setting_enable].value then
+            local amount = tonumber(settings.startup[setting_amount].value) or 1
+            for i = 1, amount do
+                table.insert(guns, gun_name)
+            end
+        end
+    end
+
+    add_guns("assault-spidertron-enable-gun-mortar", "assault-spidertron-mortar-amount", "assault_spidertron-mortar")
+    add_guns("assault-spidertron-enable-gun-rocket-launcher", "assault-spidertron-rocket-launcher-amount", "assault_spidertron_rocket_launcher")
+    add_guns("assault-spidertron-enable-gun-cannon", "assault-spidertron-cannon-amount", "assault_spidertron_cannon")
+    add_guns("assault-spidertron-enable-gun-mg", "assault-spidertron-mg-amount", "assault_spidertron-mg")
+    add_guns("assault-spidertron-enable-gun-flamer", "assault-spidertron-flamer-amount", "assault_spidertron-flamer")
+
+    return guns
 end
 
 local assault_spidertron = data.raw["spider-vehicle"]["assault_spidertron"]
@@ -127,7 +132,7 @@ if assault_spidertron then
   assault_spidertron.guns = generate_gun_list()
 end
 
-if settings.startup["spidertron-tech-option"].value == "early-assault-spidertron" then
+if settings.startup["assault-spidertron-tech-option"].value == "assault-spidertron-early-assault-spidertron" then
   data.raw.recipe["assault_spidertron"].ingredients = {
       {type = "item", name = "tank", amount = 1},
       {type = "item", name = "steel-plate", amount = 200},
@@ -137,7 +142,7 @@ if settings.startup["spidertron-tech-option"].value == "early-assault-spidertron
   }
 end
 
-if settings.startup["spidertron-tech-option"].value == "early-assault-spidertron" then
+if settings.startup["assault-spidertron-tech-option"].value == "early-assault-spidertron" then
   if data.raw["spider-vehicle"]["assault_spidertron"] then
       data.raw["spider-vehicle"]["assault_spidertron"].max_health = 2000
   end
