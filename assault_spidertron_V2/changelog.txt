@@ -1,4 +1,29 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.3.5
+Date: 2025-05-10
+  Changed:
+    - Legs repositioned to amend some small visual issues while running extremely fast
+---------------------------------------------------------------------------------------------------
+Version: 2.3.4
+Date: 2025-05-08
+  Changed:
+    - A clean fix (I accidentally deleted part of a function while adding code comments)
+---------------------------------------------------------------------------------------------------
+Version: 2.3.3
+Date: 2025-05-08
+  Changed:
+    - A quickfix
+---------------------------------------------------------------------------------------------------
+Version: 2.3.2
+Date: 2025-05-08
+  Added:
+    - Comprehensive code documentation and comments (not the most thrilling task, but undeniably useful!)
+---------------------------------------------------------------------------------------------------
+Version: 2.3.1
+Date: 2025-05-08
+  Added:
+    - reworked translations
+---------------------------------------------------------------------------------------------------
 Version: 2.3.0
 Date: 2025-05-07
   Added:

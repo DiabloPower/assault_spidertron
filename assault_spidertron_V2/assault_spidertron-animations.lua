@@ -1,21 +1,29 @@
+-- Load the utility module
 local util = require("util")
+-- Define the base path for assets
 path = "__assault_spidertron_V2__"
 
+-- Function to create leg sprite layers with adjustments
 local function create_leg_sprite_layer_definition(column, row, additions, sprite_definition)
   local tab = util.table.deepcopy(sprite_definition)
+  -- Adjust the sprite position based on variations
   tab.x = (tab.variation_count >= 8) and (tab.width * (column - 1)) or tab.x
   tab.y = tab.height * (row - 1)
+  -- Apply additional properties
   tab.draw_as_shadow = additions.draw_as_shadow
   tab.apply_runtime_tint = additions.apply_runtime_tint
   tab.variation_count = nil
   return tab
 end
 
+-- Generalized function to create specialized leg graphics based on key criteria
 local function create_leg_part_special(key, leg_index, graphics_definitions, part_base)
   local special = util.table.deepcopy(part_base)
+  -- Iterate over each graphical layer
   for layer_name, layer_definitions in pairs(graphics_definitions.layers) do
     for _, v in pairs(layer_definitions) do
       if v[key] then
+        -- Assign specific graphical properties
         special[layer_name] = create_leg_sprite_layer_definition(leg_index, v.row, v, graphics_definitions[v.key])
       end
     end
@@ -23,10 +31,12 @@ local function create_leg_part_special(key, leg_index, graphics_definitions, par
   return special
 end
 
+-- Function to create shadow graphics for leg parts
 local function create_leg_part_shadow_graphics(leg_index, graphics_definitions, part_base)
   return create_leg_part_special("draw_as_shadow", leg_index, graphics_definitions, part_base)
 end
 
+-- Function to create water reflection graphics for leg parts
 local function create_leg_part_water_reflection_graphics(leg_index, graphics_definitions, part_base)
   return create_leg_part_special("draw_as_water_reflection", leg_index, graphics_definitions, part_base)
 end
@@ -35,8 +45,10 @@ local function create_leg_part_graphics(leg_index, graphics_definitions, part_ba
   local tab = util.table.deepcopy(part_base)
   for layer_name, layer_definitions in pairs(graphics_definitions.layers) do
     for _, v in pairs(layer_definitions) do
+      -- Exclude shadow and water reflection layers
       if (not v.draw_as_shadow) and (not v.draw_as_water_reflection) then
         tab[layer_name] = tab[layer_name] or { layers = {} }
+        -- Add new graphical layer to the definition
         table.insert(tab[layer_name].layers, create_leg_sprite_layer_definition(leg_index, v.row, v, graphics_definitions[v.key]))
       end
     end
@@ -44,6 +56,7 @@ local function create_leg_part_graphics(leg_index, graphics_definitions, part_ba
   return tab
 end
 
+-- Function to create the light cone effect for the spidertron
 local function create_spidertron_light_cone(orientation, intensity, size, shift_adder)
   local shift = { x = 0, y = -14 + shift_adder}
   return
@@ -67,6 +80,7 @@ local function create_spidertron_light_cone(orientation, intensity, size, shift_
   }
 end
 
+-- Default graphics properties for spidertron leg segments
 local leg_graphics_properties_default =
 {
   upper_part =
@@ -95,6 +109,7 @@ local leg_graphics_properties_default =
   -- lower_part_water_reflection = {}  -- when not defined, lower_part definition is used
 }
 
+-- Assign default graphics properties to different legs
 local leg_graphics_properties =
 {
   [1] = leg_graphics_properties_default,
@@ -105,6 +120,7 @@ local leg_graphics_properties =
   [6] = leg_graphics_properties_default,
 }
 
+-- Define rotation offsets for spidertron joints
 local spidertron_leg_joint_rotation_offsets =
 {
   [1] = 0.25,
@@ -115,6 +131,7 @@ local spidertron_leg_joint_rotation_offsets =
   [6] = -0.25,
 }
 
+-- Template for leg graphics layers
 local leg_part_template_layers =
 {
   top_end =
@@ -139,6 +156,7 @@ local leg_part_template_layers =
   },
 }
 
+-- Definitions for graphical properties of lower leg parts
 local leg_lower_part_graphics_definitions =
 {
   layers = leg_part_template_layers,
@@ -210,6 +228,7 @@ local leg_lower_part_graphics_definitions =
   }
 }
 
+-- Assign graphical properties for the upper leg parts
 local leg_upper_part_graphics_definitions =
 {
   layers = leg_part_template_layers,
@@ -281,6 +300,7 @@ local leg_upper_part_graphics_definitions =
   }
 }
 
+-- Define the joint graphics for spidertron legs
 local leg_joint_graphics_definitions =
 {
   filename = path .. "/graphics/entity/assault_spidertron/legs/assault_spidertron-legs-knee.png",
@@ -292,6 +312,7 @@ local leg_joint_graphics_definitions =
   direction_count = 2
 }
 
+-- Define graphics set for spidertron torso
 local spidertron_torso_graphics_set =
 {
   base_animation =
@@ -309,7 +330,7 @@ local spidertron_torso_graphics_set =
       }
     }
   },
-
+  -- Define shadow graphics for spidertron torso
   shadow_base_animation =
   {
     filename = path .. "/graphics/entity/assault_spidertron/torso/assault_spidertron-body-bottom-shadow.png",
@@ -321,7 +342,7 @@ local spidertron_torso_graphics_set =
     draw_as_shadow = true,
     shift = util.by_pixel(-1, -1)
   },
-
+  -- Define main animation graphics for torso
   animation =
   {
     layers =
@@ -347,7 +368,7 @@ local spidertron_torso_graphics_set =
       }
     }
   },
-
+  -- Define shadow animation graphics for torso
   shadow_animation =
   {
     filename = path .. "/graphics/entity/assault_spidertron/torso/assault_spidertron-body-shadow.png",
@@ -359,7 +380,7 @@ local spidertron_torso_graphics_set =
     draw_as_shadow = true,
     shift = util.by_pixel(26, 0.5)
   },
-
+  -- Define water reflection graphics for torso
   water_reflection =
   {
     pictures =
@@ -372,7 +393,7 @@ local spidertron_torso_graphics_set =
       shift = util.by_pixel(0, 0)
     }
   },
-
+  -- Define light effects for spidertron
   light =
   {
     {
@@ -394,6 +415,7 @@ local spidertron_torso_graphics_set =
   render_layer = "wires-above",
   base_render_layer = "higher-object-above",
 
+  -- Define the render layer for the autopilot destination visualisation
   autopilot_destination_on_map_visualisation =
   {
     filename = "__core__/graphics/spidertron-target-map-visualization.png",
@@ -425,7 +447,7 @@ local spidertron_torso_graphics_set =
     apply_runtime_tint = true
   },
 }
-
+-- Function to create spidertron leg graphics for a given leg index
 local function create_spidertron_leg_graphics_set(leg_index)
   local function get_leg_properties(part_name, suffix)
     return leg_graphics_properties[leg_index][part_name .. "_" .. suffix] or leg_graphics_properties[leg_index][part_name]
@@ -454,7 +476,7 @@ local function create_spidertron_leg_graphics_set(leg_index)
     joint_turn_offset = spidertron_leg_joint_rotation_offsets[leg_index]
   }
 end
-
+-- Return final graphics set definitions
 return
 {
   legs = { create_spidertron_leg_graphics_set(1),

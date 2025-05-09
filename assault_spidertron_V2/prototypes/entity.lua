@@ -2,8 +2,7 @@ path = "__assault_spidertron_V2__"
 local sounds = require("__base__.prototypes.entity.sounds")
 local assaultron_animations = require(path .. "/assault_spidertron-animations.lua")
 
-
--- Leg
+-- creates a leg entity for the assault spidertron
 local function make_assaultron_leg(number, base_sprite, ending_sprite)
   return
   {
@@ -74,7 +73,7 @@ local function make_assaultron_leg(number, base_sprite, ending_sprite)
   }
 end
 
--- Capsule
+-- creates a entity for the assault spidertron
 data:extend({
 {
     type = "spider-vehicle",
@@ -186,7 +185,7 @@ data:extend({
         { -- 1: RU
           leg = "assault_spidertron-leg-1",
           mount_position = util.by_pixel(15, -20),--{0.5, -0.75},
-          ground_position = {2.25, -2.5},
+          ground_position = {2.25, -3},
           blocking_legs = {2},
           walking_group = 1,
           leg_hit_the_ground_trigger = get_leg_hit_the_ground_trigger()
@@ -202,7 +201,7 @@ data:extend({
         { -- 3: RD
           leg = "assault_spidertron-leg-3",
           mount_position = util.by_pixel(15, 18),--{0.75, 0.25},
-          ground_position = {2.25, 2.5},
+          ground_position = {2.25, 3},
           blocking_legs = {2},
           walking_group = 3,
           leg_hit_the_ground_trigger = get_leg_hit_the_ground_trigger()
@@ -210,7 +209,7 @@ data:extend({
         { -- 4: LU
           leg = "assault_spidertron-leg-4",
           mount_position = util.by_pixel(-15, -20),--{0.5, 0.75},
-          ground_position = {-2.25, -2.5},
+          ground_position = {-2.25, -3},
           blocking_legs = {5},
           walking_group = 4,
           leg_hit_the_ground_trigger = get_leg_hit_the_ground_trigger()
@@ -226,7 +225,7 @@ data:extend({
         { -- 6: LD
           leg = "assault_spidertron-leg-6",
           mount_position = util.by_pixel(-15, 18),--{-0.75, -0.25},
-          ground_position = {-2.25, 2.5},
+          ground_position = {-2.25, 3},
           blocking_legs = {5},
           walking_group = 6,
           leg_hit_the_ground_trigger = get_leg_hit_the_ground_trigger()
@@ -237,59 +236,15 @@ data:extend({
     }
   },
 
-
+  -- creates the legs for the assault spidertron
   make_assaultron_leg(1),
   make_assaultron_leg(2),
   make_assaultron_leg(3),
   make_assaultron_leg(4),
   make_assaultron_leg(5),
   make_assaultron_leg(6),
-  -- turret_animation =
-  -- {
-    -- layers =
-    -- {
-      -- {
-        -- width = 66,
-        -- height = 70,
-    -- frame_count = 1,
-        -- line_length = 8,
-        -- direction_count = 64,
-        -- shift = util.by_pixel(0, -19),
-        -- animation_speed = 8,
-        -- max_advance = 0.2,
-        -- stripes =
-        -- {
-          -- {
-           -- filename = path .. "/graphics/entity/assault_spidertron/torso/assault_spidertron-body.png",
-           -- width_in_frames = 8,
-           -- height_in_frames = 8,
-          -- }
-        -- },
-        -- hr_version = {
-          -- width = 132,
-          -- height = 138,
-          -- frame_count = 1,
-      -- line_length = 8,
-          -- direction_count = 64,
-          -- scale = 0.5,
-          -- shift = util.by_pixel(0, -19),
-          -- animation_speed = 8,
-          -- max_advance = 0.2,
-          -- stripes =
-          -- {
-            -- {
-             -- filename = path .. "/graphics/entity/assault_spidertron/torso/assault_spidertron-body.png",
-             -- width_in_frames = 8,
-             -- height_in_frames = 8,
-            -- }
-          -- }
-        -- }
-      -- }
-    -- }
-  -- },
-  -- turret_rotation_speed = 0.5 / 60,
-  -- turret_return_timeout = 300
 
+  -- creates the corpse for the assault spidertron
   {
     type = "corpse",
     name = "assault_spidertron-remnants",
