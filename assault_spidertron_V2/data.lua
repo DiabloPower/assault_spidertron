@@ -146,3 +146,14 @@ local assault_spidertron = data.raw["spider-vehicle"]["assault_spidertron"]
 if assault_spidertron then
   assault_spidertron.guns = generate_gun_list()
 end
+
+-- Adds extra resistances if the "BobEnemies" mod is active
+if mods.bobenemies then
+    table.insert(data.raw['spider-vehicle']['assault_spidertron'].resistances, {type = 'bob-pierce', decrease = 6, percent = 50})    
+    table.insert(data.raw['spider-leg']['assault_spidertron-leg-1'].resistances, {type = 'bob-pierce', decrease = 10, percent = 100})
+    table.insert(data.raw['spider-leg']['assault_spidertron-leg-2'].resistances, {type = 'bob-pierce', decrease = 10, percent = 100})
+    table.insert(data.raw['spider-leg']['assault_spidertron-leg-3'].resistances, {type = 'bob-pierce', decrease = 10, percent = 100})
+    table.insert(data.raw['spider-leg']['assault_spidertron-leg-4'].resistances, {type = 'bob-pierce', decrease = 10, percent = 100})
+    table.insert(data.raw['spider-leg']['assault_spidertron-leg-5'].resistances, {type = 'bob-pierce', decrease = 10, percent = 100})
+    table.insert(data.raw['spider-leg']['assault_spidertron-leg-6'].resistances, {type = 'bob-pierce', decrease = 10, percent = 100})
+end
