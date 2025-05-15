@@ -1,5 +1,15 @@
 -- Define various startup settings for the Assault Spidertron mod
 data:extend({
+    -- Settign to enable Arachnophobia mode
+    {
+        type = "string-setting",
+        name = "assault-spidertron-enable-arachnophobia-mode",
+        setting_type = "startup",
+        allowed_values = {"active", "inactive"},
+        default_value = "inactive",
+        order = "a-1"
+    },
+
     -- Setting to enable or disable friendly fire
     {
         type = "bool-setting",
