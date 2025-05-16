@@ -15,6 +15,7 @@ This mod adapts the **Assault Spidertron** created by [Dave](https://mods.factor
 - **Engine Customization:** Choose between a **Void Engine** or a **Burner Engine**, with an optional smoke effect. If the **SpidertronEnhancements** mod is installed, its engine settings can be applied.
 - **Automatic Weapon Switching:** Can be enabled to cycle through weapons after firing. Works best with weapons of similar range or near point-blank engagement.
 - **Configurable Weapon Systems:** Each weapon system can be toggled on or off individually. Set the number of active weapons per system (1–4) for optimal customization. Available weapon systems: **Artillery Mortar, Assault Rockets, Assault Cannon, Assault MG, Assault Flamer**.
+- **Bob's Enemies Compatibility**: Adds resistances for **piercing damage** from **bobenemies** mod.
 
 ### **Caution Regarding Explosive Weapons**
 It is highly recommended **not to use explosive weaponry** (e.g., cannon shells or rockets), especially when the unit is under AI control. Due to its tendency to fire in close quarters, explosive weapons can lead to self-inflicted destruction. Fortunately, a mod setting is now available to disable friendly fire, preventing accidental damage.
