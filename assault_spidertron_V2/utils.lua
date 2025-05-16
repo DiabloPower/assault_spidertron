@@ -1,10 +1,11 @@
 local sounds = require("__base__.prototypes.entity.sounds")
 local assaultron_animations = require(path .. "/assault_spidertron-animations.lua")
 
+--  transferted from entity.lua for arachnophobia mode
 local function get_spidertron_legs()
     local arachnophobia_enabled = settings.startup["assault-spidertron-enable-arachnophobia-mode"].value == "active"
 
-    local legs -- Definiere `legs` zuerst global in der Funktion
+    local legs -- define `legs` variable globally
 
     if arachnophobia_enabled then
         legs = {
