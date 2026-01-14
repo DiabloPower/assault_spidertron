@@ -31,6 +31,17 @@ if data.raw.technology["spidertron"] then
           },
           time = 60
       }
+
+      -- If early option selected, change recipe ingredients to require a Tank instead of a Spidertron
+      if data.raw.recipe["assault_spidertron"] then
+          data.raw.recipe["assault_spidertron"].ingredients = {
+              {type = "item", name = "tank", amount = 1},
+              {type = "item", name = "steel-plate", amount = 200},
+              {type = "item", name = "advanced-circuit", amount = 100},
+              {type = "item", name = "engine-unit", amount = 60},
+              {type = "item", name = "radar", amount = 1},
+          }
+      end
   else
     -- Default to Spidertron technology settings
     tech.unit = table.deepcopy(data.raw.technology["spidertron"].unit)

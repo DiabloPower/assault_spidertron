@@ -175,12 +175,12 @@ data:extend({
     {
       type = "projectile",  -- Fires cannon shells
       ammo_category = "cannon-shell",  -- Uses cannon shells as ammo
-      cooldown = 200,  -- Slow fire rate (every 200 ticks)
+      cooldown = 100,  -- Slow fire rate (every 100 ticks)
       movement_slow_down_factor = 0,
       projectile_creation_distance = 1.0,
       projectile_center = {0, 0.5},
       range = 40,  -- Medium attack range
-      damage_modifier = 1.5,  -- Increased damage
+      damage_modifier = 2.5,  -- Increased damage
 
       shell_particle =
       {

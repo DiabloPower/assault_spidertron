@@ -1,4 +1,25 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.3.11
+Date: 2026-01-14
+  Changed:
+    - When `assault-spidertron-tech-option` is set to `early-assault-spidertron`, the `assault_spidertron` recipe now requires a `tank` and adjusted components (Tank = 1, Steel plate = 200, Advanced circuit = 100, Engine unit = 60, Radar = 1) instead of a Spidertron.
+    - Added a runtime recipe swap in `data.lua` to apply the Tank-based ingredients when the early tech option is selected.
+  Fixed:
+    - Fix: When `assault-spidertron-tech-option` was set to `early-assault-spidertron` the recipe incorrectly required a `spidertron`; it should have required a `tank` from the start.
+---------------------------------------------------------------------------------------------------
+Version: 2.3.10
+Date: 2025-08-26
+  Changed:
+    - Reworked friendly fire logic for Assault Spidertron to prevent self-inflicted damage.
+    - Global force setting now syncs dynamically when Assault Spidertrons are built or configured.
+    - Damage filtering added to selectively reverse friendly fire from allied Assault Spidertrons.
+    - Improved stability and performance by avoiding tick-based scanning.
+---------------------------------------------------------------------------------------------------
+Version: 2.3.9
+Date: 2025-08-15
+  Changed:
+    - is now a valid military target for bitters/worms
+---------------------------------------------------------------------------------------------------
 Version: 2.3.8
 Date: 2025-05-16
   Added:

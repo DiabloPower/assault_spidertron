@@ -34,37 +34,37 @@ local function make_assaultron_leg(number, base_sprite, ending_sprite)
     {
       {
         type = "physical",
-        decrease = 10,
+        decrease = 100000,
         percent = 100
       },
       {
         type = "explosion",
-        decrease = 10,
+        decrease = 100000,
         percent = 100
       },
       {
         type = "acid",
-        decrease = 10,
+        decrease = 100000,
         percent = 100
       },
       {
         type = "fire",
-        decrease = 10,
+        decrease = 100000,
         percent = 100
       },
       {
         type = "impact",
-        decrease = 10,
+        decrease = 100000,
         percent = 100
       },
       {
         type = "electric",
-        decrease = 10,
+        decrease = 100000,
         percent = 100
       },
       {
         type = "laser",
-        decrease = 10,
+        decrease = 100000,
         percent = 100
       }      
     },
@@ -163,6 +163,7 @@ data:extend({
     corpse = "assault_spidertron-remnants",
     dying_explosion = "spidertron-explosion",
     energy_per_hit_point = 1,
+    is_military_target = true,
     guns = { "assault_spidertron-mortar", "assault_spidertron_rocket_launcher", "assault_spidertron_cannon", "assault_spidertron-mg", "assault_spidertron-flamer" },
     inventory_size = 80,
     trash_inventory_size = 20,
@@ -178,7 +179,7 @@ data:extend({
     },
     movement_energy_consumption = "250kW",
     automatic_weapon_cycling = false,
-    chain_shooting_cooldown_modifier = 0.5,
+    chain_shooting_cooldown_modifier = 0.2,
     spider_engine =
     {
       legs = get_spidertron_legs(),
